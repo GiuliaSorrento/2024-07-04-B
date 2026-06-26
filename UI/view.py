@@ -31,6 +31,7 @@ class View(ft.UserControl):
         # First row with some controls
         self.ddyear = ft.Dropdown(label="Anno",
                                   hint_text="Anno da analizzare per gli avvistamenti.")
+
         self.ddstate = ft.Dropdown(label="Stato",
                                    hint_text="Stato da analizzare per gli avvistamenti.")
         self.btn_graph = ft.ElevatedButton(text="Crea Grafo",
@@ -49,6 +50,8 @@ class View(ft.UserControl):
         self.txt_result2 = ft.ListView(width=400, expand=1, spacing=10, padding=20, auto_scroll=False)
         self.txt_result1.controls.append(ft.Text("Risultati punto1"))
         self.txt_result2.controls.append(ft.Text("Risultati punto2"))
+
+        self._controller.fillDDYears()
 
         container1 = ft.Container(
             content=self.txt_result1,
